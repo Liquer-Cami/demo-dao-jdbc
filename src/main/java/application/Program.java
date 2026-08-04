@@ -5,6 +5,7 @@ import model.dao.impl.DaoFactory;
 import model.entities.Department;
 import model.entities.Seller;
 
+import java.util.Date;
 import java.util.List;
 
 public class Program {
@@ -27,6 +28,11 @@ public class Program {
         for(Seller obj: list1){
             System.out.println(obj);
         }
+
+        System.out.println("TEST 4: seller Insert");
+        Seller newSeller = new Seller(null, "Greg", "greg@gma.com", new Date(), 4000.00, department);
+        sellerDao.insert(newSeller);
+        System.out.println(newSeller.getId());
     }
 
 }
